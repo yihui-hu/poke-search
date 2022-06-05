@@ -128,8 +128,8 @@ export default function Types(props) {
     }
     return (
         <div>
-            <span className="type" style={determineColor(type_1)}>{type_1}</span>
-            {type_2 !== "Nil" && <span className="type" style={determineColor(type_2)}>{type_2}</span>}
+            <span className="types" style={determineColor(type_1)}>{type_1}</span>
+            {type_2 !== "Nil" && <span className="types" style={determineColor(type_2)}>{type_2}</span>}
         </div>
     )
 }

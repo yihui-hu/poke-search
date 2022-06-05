@@ -1,49 +1,140 @@
-* {
-  box-sizing: border-box;
+/* flexbox columns */
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 100%;
 }
 
-.App {
-  text-align: center;
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
+
+/* header styles */
 
 .header {
   font-family: "IBM Plex Mono", serif;
-  font-style: italic;
   font-size: 1rem;
+  font-style: italic;
+
   color: white;
-  padding: 20px;
   background-color: crimson;
+
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  text-align: center;
 }
+
+.input {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+
+  padding: 0.8rem;
+  margin-bottom: 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  width: 250px;
+
+  text-indent: 3px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.submit {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+
+  color: white;
+  background-color: rgb(100, 8, 8);
+
+  padding: 0.8rem;
+
+  border: none;
+  border-radius: 10px;
+
+  width: 100px;
+
+  margin: 10px;
+
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: rgb(63, 0, 0);
+}
+
+.navigation {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-size: 1rem;
+
+  color: white;
+  background-color: crimson;
+
+  padding: 0.7rem;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.right {
+  border-radius: 0 0 0 20px;
+}
+
+.left {
+  border-radius: 0 0 20px 0;
+}
+
+.navigation:hover {
+  background-color: rgb(153, 14, 42);
+}
+
+/* pokeView */
 
 .pokeview {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1rem;
 }
 
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
+.nametype-column {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.monImg {
+  width: 300px;
+  margin-bottom: 40px;
+}
+
+.types {
+  font-family: "IBM Plex Sans", sans-serif;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  padding-block: 10px;
+  padding-inline: 15px;
+
+  border-radius: 10px;
+}
+
+.stats-column {
+  justify-content: center;
+  align-items: center;
   padding: 30px;
-}
-
-.left {
-  width: 40%;
-}
-
-.right {
-  width: 60%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
 }
 
 .stats {
@@ -52,58 +143,42 @@
   text-align: left;
 }
 
-.type {
-  font-family: "IBM Plex Sans", sans-serif;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
-  border-radius: 10px;
+.stats > h1 {
+  display: flex;
 }
 
-h2 {
+.abilities {
+  margin-inline: 80px;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.abilities > h2 {
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+.abilityDesc {
+  font-family: "IBM Plex Mono";
+}
+
+.evolutions {
+  font-family: "IBM Plex Mono";
+  font-size: 0.8rem;
+  text-align: center;
+  align-items: center;
+}
+
+.evolutions > img {
+  width: 150px;
+}
+
+/* footer */
+
+.footer {
   font-family: "IBM Plex Mono", serif;
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: lightslategray;
-}
-
-img {
-  width: 300px;
-  margin-bottom: 20px;
-}
-
-.pokemonName {
-  letter-spacing: 0.3rem;
-}
-
-.input {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1rem;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  width: 250px;
-  margin-bottom: 10px;
-}
-
-.submit-button {
-  font-family: "IBM Plex Sans", sans-serif;
-  color: white;
-  background-color: rgb(100, 8, 8);
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  width: 100px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: rgb(63, 0, 0);
-}
-
-.statsview > h1 {
-  display: flex;
+  text-align: center;
 }

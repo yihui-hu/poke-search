@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Stats(props) {
 
-    // object destructuring coming in handy?
+    // object destructuring coming in handy
     let {hp, attack, defense, special_attack, special_defense, speed} 
     = props.stats
 
@@ -14,7 +14,6 @@ export default function Stats(props) {
         spatk: "#6790F0",
         spdf: "#78C84F",
         spd: "#F85787",
-        bst: "white",
     }
 
     function statsStyle(stat, color) {
@@ -41,14 +40,14 @@ export default function Stats(props) {
     let bst = hp + attack + defense + special_attack + special_defense + speed
 
     return (
-        <div className="statsview">
+        <div className="stats">
             <h1>HP: <span style={statsStyle(hp, colours.hp)}>{hp}</span></h1>
             <h1>Attack: <span style={statsStyle(attack, colours.atk)}>{attack}</span></h1>
             <h1>Defense: <span style={statsStyle(defense, colours.def)}>{defense}</span></h1>
             <h1>Sp.Atk: <span style={statsStyle(special_attack, colours.spatk)}>{special_attack}</span></h1>
             <h1>Sp.Def: <span style={statsStyle(special_defense, colours.spdf)}>{special_defense}</span></h1>
             <h1>Speed: <span style={statsStyle(speed, colours.spd)}>{speed}</span></h1>
-            <h1>BST: <span style={statsStyle(bst, colours.bst)}>{bst}</span></h1>
+            <h1>BST: {bst}</h1>
         </div>
     )
 }
