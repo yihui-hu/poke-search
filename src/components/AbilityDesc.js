@@ -14,7 +14,7 @@ export default function AbilityDesc(props) {
             let response = await axios.get(url)
             let descriptions = response.data.effect_entries
             if (descriptions.length === 0) {
-                throw ("Data not available. Try Bulbapedia!")
+                throw ("Sorry! Data not available.")
             }
             // get english descriptions only
             for (let i = 0; i < descriptions.length; i++) {

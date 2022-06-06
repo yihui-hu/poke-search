@@ -108,17 +108,17 @@ export default function Evolutions(props) {
         [
             {
                 id: 1,
-                name: `${stage1}`,
+                name: `${stage1.charAt(0).toUpperCase() + stage1.slice(1)}`,
                 img: `${img1 != undefined ? img1 : `https://upload.wikimedia.org/wikipedia/commons/4/46/Question_mark_%28black%29.svg`}`
             },
             {
                 id: 2,
-                name: `${stage2}`,
+                name: `${stage2.charAt(0).toUpperCase() + stage2.slice(1)}`,
                 img: `${img2 != undefined ? img2 : `https://upload.wikimedia.org/wikipedia/commons/4/46/Question_mark_%28black%29.svg`}`
             },
             { 
                 id: 3,
-                name: `${stage3}`,
+                name: `${stage3.charAt(0).toUpperCase() + stage3.slice(1)}`,
                 img: `${img3 != undefined ? img3 : `https://upload.wikimedia.org/wikipedia/commons/4/46/Question_mark_%28black%29.svg`}`
             }
         ]
@@ -129,7 +129,7 @@ export default function Evolutions(props) {
     function renderEvoChain() {
         return evolution.map((stage) => {
 
-            if (stage.name !== "nil") {
+            if (stage.name !== "Nil") {
                 return (
                     <div key={stage.id} className="column evolutions">
                         <h1>{stage.name}</h1>
@@ -141,7 +141,7 @@ export default function Evolutions(props) {
     }
 
     return (
-        <div className="row 2">
+        <div className="row 2 customRow">
             {renderEvoChain()}
         </div>
     )

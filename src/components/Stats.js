@@ -18,6 +18,7 @@ export default function Stats(props) {
 
     function statsStyle(stat, color) {
         return {
+            textAlign: "left",
             color: "black",
             marginLeft: "10px",
             textIndent: "5px",

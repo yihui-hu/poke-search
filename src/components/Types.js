@@ -126,6 +126,7 @@ export default function Types(props) {
             }
         }
     }
+    
     return (
         <div>
             <span className="types" style={determineColor(type_1)}>{type_1}</span>

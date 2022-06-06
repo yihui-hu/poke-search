@@ -27,7 +27,7 @@ export default function Abilities(props) {
 
     return (
         <div className="abilities">
-            <h1 style={{letterSpacing: "0.3rem"}}>ABILITIES</h1>
+            <h1 className="title">ABILITIES</h1>
             {renderAbilities()}
         </div>
     )
