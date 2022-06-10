@@ -22,7 +22,14 @@ export default function MoveDetails(props) {
         },
         pp: "-",
         priority: 0,
-        effect_entries: [{short_effect: "null"}],
+        flavor_text_entries: [
+            {
+                flavor_text: "",
+                language: {
+                    name: "en"
+                }
+            }
+        ],
         effect_chance: 0,
     })
 
@@ -181,6 +188,14 @@ export default function MoveDetails(props) {
         setModal(!modal)
     }
 
+    function moveDescription() {
+        for (let i = 0; i < moveDetails.flavor_text_entries.length; i++) {
+            if (moveDetails.flavor_text_entries[i].language.name === "en") {
+                return <p>{moveDetails.flavor_text_entries[i].flavor_text}</p>
+            }
+        }
+    }
+
     return (
         <>
         <tr>
@@ -194,8 +209,8 @@ export default function MoveDetails(props) {
                 <div className="overlay">
                     <div className="modal-content">
                         <h2>{moveName}</h2>
-                        <p>{moveDetails.effect_entries[0].short_effect.replaceAll("$effect_chance%", `${moveDetails.effect_chance}%`)}</p>
-                        <p>This is a {moveDetails.damage_class.name} move which  {moveDetails.power != null ? `has a power of ${moveDetails.power}` : `has no power`} {moveDetails.accuracy != null ? `and an accuracy of ${moveDetails.accuracy}%` : "and always lands"}.</p>
+                        {moveDescription()}
+                        <p>This is a {moveDetails.damage_class.name} move which  {moveDetails.power != null ? `has a power of ${moveDetails.power}` : `has no/varied power`} {moveDetails.accuracy != null ? `and an accuracy of ${moveDetails.accuracy}%` : "and always lands"}.</p>
                         <p>It has a PP of {moveDetails.pp}.</p>
                         <button className="close-modal" onClick={toggleModal}>×
                         </button>

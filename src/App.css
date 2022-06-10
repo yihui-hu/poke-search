@@ -1,3 +1,7 @@
+* {
+  font-feature-settings: "kern";
+}
+
 /* flexbox columns */
 
 .row {
@@ -20,12 +24,36 @@
   flex: 1;
 }
 
+/* fonts */
+
+@font-face {
+  font-family: 'PP NeueBit';
+  src: url('../src/fonts/PPNeueBit-Bold.woff2') format('woff2'),
+      url('../src/fonts/PPNeueBit-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori Regular';
+  src: url('../src/fonts/PPMori-Regular.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori SemiBold';
+  src: url('../src/fonts/PPMori-SemiBold.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
 /* header styles */
 
 .header {
-  font-family: "IBM Plex Mono", serif;
+  font-family: 'PP Mori SemiBold', "IBM Plex Mono", sans-serif;
   font-size: 1rem;
-  font-style: italic;
 
   color: white;
   background-color: crimson;
@@ -43,6 +71,17 @@
   font-style: normal !important;
   position: absolute !important;
   right: 5vmin;
+  top: 5vmin;
+  cursor: pointer;
+}
+
+.toggleView {
+  font-family: "IBM Plex Sans";
+  color: white;
+  font-size: 1.2rem;
+  font-style: normal !important;
+  position: absolute !important;
+  left: 5vmin;
   top: 5vmin;
   cursor: pointer;
 }
@@ -137,11 +176,34 @@
   background-color: rgb(153, 14, 42);
 }
 
+/* allPokemon */
+
+.allPageNo {
+  font-family: "PP NeueBit", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.pokemonCard {
+  text-align: center;
+}
+
+.pokemonCard > h2 {
+  font-family: "PP NeueBit", sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.pokemonCard > img {
+  width: 200px;
+  cursor: pointer;
+}
+
 /* pokeView */
 
 .pokeview {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1rem;
+  font-family: "PP NeueBit", sans-serif;
+  font-size: 1.2rem;
 }
 
 .nametype-column {
@@ -190,8 +252,8 @@
   margin-bottom: 30px;
 }
 
-.abilities > h2 {
-  font-family: "IBM Plex Mono", sans-serif;
+.abilities-name {
+  font-size: 2rem;
 }
 
 .abilityDesc {
@@ -230,6 +292,7 @@
 }
 
 .moves-info {
+  font-size: 1.7rem;
   text-align: center;
 }
 
@@ -338,12 +401,15 @@ body.active-modal {
 
 .modal-content > h2 {
   text-align: left;
+  font-size: 1.5rem;
   font-family: "IBM Plex Sans";
   font-style: normal;
 }
 
 .modal-content > p {
+  font-family: "PP Mori SemiBold";
   text-align: left;
+  font-size: 1.1rem;
   font-style: normal;
 }
 

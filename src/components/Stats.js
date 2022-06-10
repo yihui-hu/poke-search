@@ -23,7 +23,7 @@ export default function Stats(props) {
             marginLeft: "10px",
             textIndent: "5px",
             backgroundColor: color,
-            width: `${determineWidth(stat)}px`,
+            width: `${determineWidth(stat)}px `,
             borderRadius: "4px",
         }
     }
@@ -34,7 +34,7 @@ export default function Stats(props) {
         } else if (stat < 25) {
             return 38
         } else {
-            return stat*1.5
+            return stat*1.3
         }
     }
 

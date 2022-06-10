@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.c2b697ee.css",
-    "main.js": "/static/js/main.a59987b8.js",
+    "main.css": "/static/css/main.c9fd9b7a.css",
+    "main.js": "/static/js/main.dbb12b06.js",
     "static/js/787.e63902b9.chunk.js": "/static/js/787.e63902b9.chunk.js",
+    "static/media/PPMori-SemiBold.woff": "/static/media/PPMori-SemiBold.6a361de892cb094e7e50.woff",
+    "static/media/PPMori-Regular.woff": "/static/media/PPMori-Regular.54e885754de8c96f1116.woff",
+    "static/media/PPNeueBit-Bold.woff": "/static/media/PPNeueBit-Bold.5abeefb14e5a0354a8c9.woff",
+    "static/media/PPNeueBit-Bold.woff2": "/static/media/PPNeueBit-Bold.427a23493fa6a1439449.woff2",
     "index.html": "/index.html",
-    "main.c2b697ee.css.map": "/static/css/main.c2b697ee.css.map",
-    "main.a59987b8.js.map": "/static/js/main.a59987b8.js.map",
+    "main.c9fd9b7a.css.map": "/static/css/main.c9fd9b7a.css.map",
+    "main.dbb12b06.js.map": "/static/js/main.dbb12b06.js.map",
     "787.e63902b9.chunk.js.map": "/static/js/787.e63902b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2b697ee.css",
-    "static/js/main.a59987b8.js"
+    "static/css/main.c9fd9b7a.css",
+    "static/js/main.dbb12b06.js"
   ]
 }

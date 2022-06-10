@@ -4,7 +4,11 @@ import axios from "axios"
 
 export default function FunFacts(props) {
     let hp = props.hp
-    let name = props.name
+    let name = props.name.toLowerCase()
+    if (name !== "ho-oh" && name !== "mime-jr" && name !== "mr-mime") {
+        name = name.split('-')[0]
+    }
+
     let capitalisedName = name.charAt(0).toUpperCase() + name.slice(1)
     let [facts, setFacts] = useState({
         habitat: "",
@@ -17,7 +21,6 @@ export default function FunFacts(props) {
 
     async function getTier() {
         let response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${name}`)
-        console.log(response.data)
         setFacts({
             habitat: response.data.habitat,
             growthRate: response.data.growth_rate.name,

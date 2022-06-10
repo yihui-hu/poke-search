@@ -19,8 +19,9 @@ export default function Abilities(props) {
     function renderAbilities() {
         return abilities.map((ability) => 
             <div key={ability}>
-                <h2>{formatter(ability.replaceAll('-',' '))}</h2>
+                <h2 className="abilities-name">{formatter(ability.replaceAll('-',' '))}</h2>
                 <AbilityDesc ability={ability} />
+                <hr></hr>
             </div>
         )
     }
@@ -28,6 +29,7 @@ export default function Abilities(props) {
     return (
         <div className="abilities">
             <h1 className="title">ABILITIES</h1>
+            <hr></hr>
             {renderAbilities()}
         </div>
     )

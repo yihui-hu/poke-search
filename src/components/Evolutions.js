@@ -8,6 +8,7 @@ export default function Evolutions(props) {
     let mon = props.name.toLowerCase()
     let backup_name = mon
     mon = mon.split('-')[0]
+
     let dummy = [
         {
             id: 1,
@@ -54,9 +55,20 @@ export default function Evolutions(props) {
                     })
             })
             .catch((error) => {
-                setEvolution(dummy)
-                console.log(error)
+                axios.get(`https://pokeapi.co/api/v2/pokemon-species/${backup_name}`)
+                    .then((response) => {
+                        axios.get(response.data.evolution_chain.url)
+                            .then((response) => {
+                                let data = response.data.chain
+                                getData(data)
+                            })
+                    })
+                    .catch((error) => {
+                        setEvolution(dummy)
+                        console.log(error)
+                    })
             })
+            
     }, [mon])
 
     async function getData(data) {
@@ -129,7 +141,7 @@ export default function Evolutions(props) {
     function renderEvoChain() {
         return evolution.map((stage) => {
 
-            if (stage.name !== "Nil") {
+            if (stage.name !== "Nil" && stage.name !== "nil") {
                 return (
                     <div key={stage.id} className="column evolutions">
                         <h1>{stage.name}</h1>

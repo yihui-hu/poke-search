@@ -31,7 +31,7 @@ export default function PokeView(props) {
                 <Evolutions name={mon.name} />
             </div>
             <Moves name={mon.name} />
-            <FunFacts name={mon.name.toLowerCase().split('-')[0]} hp={mon.hp}/>
+            <FunFacts name={mon.name} hp={mon.hp}/>
         </div>
     )
 }
