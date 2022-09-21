@@ -54,9 +54,9 @@ export default function Moves(props) {
     }, [name])
 
     return (
-        <div>
+        <div className="moves-spacer">
             <h1 className="title">MOVES</h1>
-            <p className="moves-info">(click on a move's name for more info!)</p>
+            <p className="moves-info">(Click on a move for more info!)</p>
             <table className="moves">
             <tbody>
                 <tr>

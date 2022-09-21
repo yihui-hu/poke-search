@@ -175,8 +175,8 @@ export default function MoveDetails(props) {
             }
         } else {
             return {
-                color: "white",
-                backgroundColor: "black",
+                color: "black",
+                backgroundColor: "white",
                 borderRadius: "25px",
             }
         }

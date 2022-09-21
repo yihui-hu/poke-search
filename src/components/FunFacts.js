@@ -69,7 +69,6 @@ export default function FunFacts(props) {
                     return <h4 className="funfacts-center">{form_counter}. {formatter(form.pokemon.name.replaceAll('-',' '))}</h4>
                 }
             })}<h4 className="funfacts-center">Try looking them up above!</h4><hr></hr></h2>}
-            
         </div>
     )
 }

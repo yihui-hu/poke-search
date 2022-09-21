@@ -29,7 +29,7 @@
 @font-face {
   font-family: 'PP NeueBit';
   src: url('../src/fonts/PPNeueBit-Bold.woff2') format('woff2'),
-      url('../src/fonts/PPNeueBit-Bold.woff') format('woff');
+    url('../src/fonts/PPNeueBit-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -86,6 +86,17 @@
   cursor: pointer;
 }
 
+.toggleViewChevron {
+  font-family: "IBM Plex Mono";
+  color: white;
+  font-size: 1.2rem;
+  font-style: normal !important;
+  position: absolute !important;
+  left: 5vmin;
+  top: 5vmin;
+  cursor: pointer;
+}
+
 .title {
   letter-spacing: 0.3rem;
   text-align: center;
@@ -109,6 +120,8 @@
 
   width: 250px;
 
+  margin: 5px;
+
   text-indent: 3px;
 }
 
@@ -131,13 +144,21 @@
 
   width: 100px;
 
-  margin: 10px;
+  margin: 5px;
 
   cursor: pointer;
 }
 
-.submit:hover {
-  background-color: rgb(63, 0, 0);
+@media (hover: hover) {
+  .submit:hover {
+    background-color: rgb(63, 0, 0);
+  }
+  .infoShown:hover {
+    background-color: rgb(215, 215, 215);
+  }
+  .navigation:hover {
+    background-color: rgb(153, 14, 42);
+  }
 }
 
 .navigation {
@@ -158,45 +179,110 @@
 
 .right {
   border-radius: 0 0 0 20px;
+  margin: 0;
 }
 
 .left {
   border-radius: 0 0 20px 0;
+  margin: 0;
 }
 
 .rightbottom {
   border-radius: 20px 0 0 0;
+  margin: 0;
 }
 
 .leftbottom {
   border-radius: 0 20px 0 0;
-}
-
-.navigation:hover {
-  background-color: rgb(153, 14, 42);
+  margin: 0;
 }
 
 /* allPokemon */
 
-.allPageNo {
+.allPokemonTiny {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px;
+}
+
+.allPokemonSmall {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+
+.allPokemonMobile {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.allPokemonTablet {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+}
+
+.allPokemonDesktop {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  padding: 10px;
+}
+
+.allInfo {
   font-family: "PP NeueBit", sans-serif;
   font-size: 1.5rem;
+  text-align: center !important;
+}
+
+.allInfoHeader {
   text-align: center;
+}
+
+.infoShown {
+  text-align: center !important;
+  justify-self: center;
+  align-items: center;
+  font-family: "PP Mori Semibold", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: rgb(238, 238, 238);
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.infoShown:active {
+  background-color: rgb(238, 238, 238);
 }
 
 .pokemonCard {
   text-align: center;
+  width: 100%;
 }
 
-.pokemonCard > h2 {
+.pokemonCard>h2 {
   font-family: "PP NeueBit", sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
 }
 
-.pokemonCard > img {
-  width: 200px;
+.pokemonCard>h3 {
+  font-family: "PP NeueBit", sans-serif;
+  font-size: 1.3rem !important;
+}
+
+.pokemonCard>img {
+  width: 25vmin;
+  margin: 0;
   cursor: pointer;
+}
+
+.typesIcon>img {
+  width: 25px;
 }
 
 /* pokeView */
@@ -211,6 +297,10 @@
   text-align: center;
   align-items: center;
   margin-bottom: 30px;
+}
+
+.id {
+  margin: 0;
 }
 
 .monImg {
@@ -230,6 +320,19 @@
   border-radius: 25px;
 }
 
+.typesSmall {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 8px;
+
+  margin-left: 3px;
+  margin-right: 3px;
+
+  padding-block: 5px;
+  padding-inline: 10px;
+
+  border-radius: 100px;
+}
+
 .stats-column {
   justify-content: center;
   align-items: center;
@@ -241,7 +344,7 @@
   font-size: 0.7rem;
 }
 
-.stats > h1 {
+.stats>h1 {
   display: flex;
 }
 
@@ -266,10 +369,10 @@
   font-size: 0.8rem;
   text-align: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
-.evolutions > img {
+.evolutions>img {
   width: 150px;
 }
 
@@ -289,6 +392,10 @@
   margin-right: auto;
   margin-bottom: 80px;
   width: 90vmin;
+}
+
+.moves-spacer {
+  margin-top: 70px;
 }
 
 .moves-info {
@@ -313,7 +420,7 @@
   width: 90px;
 }
 
-tr > th {
+tr>th {
   padding-block: 10px;
 }
 
@@ -321,7 +428,7 @@ tr > th {
   margin-bottom: 80px;
 }
 
-.funfacts > h2 {
+.funfacts>h2 {
   font-family: "IBM Plex Mono";
   font-size: 1.1rem;
   text-align: left;
@@ -334,6 +441,17 @@ tr > th {
 
 .funfacts-center {
   text-align: center !important;
+}
+
+.smogon-info {
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.smogon > h2 {
+  text-align: center
 }
 
 /* footer */
@@ -372,7 +490,8 @@ body.active-modal {
   font-size: 18px;
 }
 
-.modal, .overlay {
+.modal,
+.overlay {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -382,31 +501,32 @@ body.active-modal {
   position: fixed;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.5);
-}
-
 .modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: #f1f1f1;
+  background: white;
   color: black;
   padding: 14px 28px;
   border-radius: 3px;
   width: 70vmin;
+  border: 2px solid white;
+  box-shadow: 0 2px 0 2px black,
+    inset 0 2px 0 2px black,
+    0 0 0 2px black,
+    inset 0 0 0 2px black;
 }
 
-.modal-content > h2 {
+.modal-content>h2 {
   text-align: left;
   font-size: 1.5rem;
   font-family: "IBM Plex Sans";
   font-style: normal;
 }
 
-.modal-content > p {
+.modal-content>p {
   font-family: "PP Mori SemiBold";
   text-align: left;
   font-size: 1.1rem;
@@ -414,7 +534,7 @@ body.active-modal {
 }
 
 .close-modal {
-  background-color: #f1f1f1;
+  background-color: white;
   border: none;
   font-size: 1.5rem;
   position: absolute;

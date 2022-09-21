@@ -6,6 +6,7 @@ import Evolutions from "./Evolutions"
 import PokedexEntry from "./PokedexEntry"
 import Moves from "./Moves"
 import FunFacts from "./FunFacts"
+import SmogonInfo from "./SmogonInfo";
 
 export default function PokeView(props) {
     let mon = props.pokemon
@@ -14,6 +15,7 @@ export default function PokeView(props) {
         <div className="pokeview">
             <div className="row">
                 <div className="column nametype-column">
+                    <h2 className="id">#{mon.id}</h2>
                     <h1 className="monName">{mon.name}</h1>
                     <img className="monImg" src={mon.img} />
                     <Types type_1={mon.type_1} type_2={mon.type_2}/>
@@ -31,7 +33,8 @@ export default function PokeView(props) {
                 <Evolutions name={mon.name} />
             </div>
             <Moves name={mon.name} />
-            <FunFacts name={mon.name} hp={mon.hp}/>
+            <FunFacts name={mon.name} hp={mon.hp} />
+            {/* <SmogonInfo name={mon.name} /> */}
         </div>
     )
 }
